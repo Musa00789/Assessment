@@ -1,10 +1,10 @@
-// routes/dashboardRoutes.js
+
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const Task = require("../models/Task");
 
-// Dashboard overview
+
 router.get("/", async (req, res) => {
   try {
     const totalUsers = await User.countDocuments();
