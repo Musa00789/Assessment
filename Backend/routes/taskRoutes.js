@@ -1,9 +1,9 @@
-// routes/taskRoutes.js
+
 const express = require("express");
 const router = express.Router();
 const Task = require("../models/Task");
 
-// Create Task
+
 router.post("/", async (req, res) => {
   const { title, userId } = req.body;
 
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Update Task
+
 router.put("/:id", async (req, res) => {
   const { title, status } = req.body;
 
@@ -32,7 +32,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete Task
+
 router.delete("/:id", async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);
@@ -42,7 +42,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// List tasks for a user
+
 router.get("/:id", async (req, res) => {
   const { userId } = req.query;
 
@@ -56,7 +56,7 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const tasks = await Task.find(); // Fetch all tasks from the database
+    const tasks = await Task.find(); 
     res.json(tasks);
   } catch (err) {
     res.status(500).json({ message: "Error fetching tasks" });
