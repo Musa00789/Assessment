@@ -1,0 +1,54 @@
+.dashboard {
+  max-width: 400px;
+  margin: 0px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stats p {
+  flex: 1;
+  font-size: 18px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.stats p.completed {
+  background-color: #28a745;
+}
+
+.stats p.pending {
+  background-color: #ffc107;
+}
+
+.stats p:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+  }
+
+  .stats p {
+    margin: 5px 0;
+  }
+}
